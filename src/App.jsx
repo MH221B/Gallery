@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeaderComponent from "./components/headerComponent";
+import HeaderComponent from "./components/HeaderComponent";
 import PhotosPage from "./components/PhotosPage";
 import { Container } from "react-bootstrap";
 import {
