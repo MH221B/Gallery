@@ -5,9 +5,6 @@
 html,
 body {
   height: 100%;
-}
-
-body {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -56,18 +53,6 @@ body {
   margin-top: auto;
 }
 
-/* Optional overlay centering (keeps above page) */
-.photo-detail-page {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  z-index: 1000;
-}
-
 .photo-detail-center {
   display: flex;
   align-items: center;
@@ -83,4 +68,11 @@ body {
   max-width: 1100px;
   max-height: calc(100vh - 2rem);
   overflow: auto;
+}
+
+.photo-detail-img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  display: block;
 }

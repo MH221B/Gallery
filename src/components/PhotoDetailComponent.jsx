@@ -43,8 +43,7 @@ const PhotoDetailComponent = () => {
                         <img
                             src={photo.urls?.regular || photo.urls?.full || photo.urls?.small}
                             alt={photo.alt_description || ''}
-                            className="img-fluid rounded"
-                            style={{ width: '100%', maxHeight: '70vh', objectFit: 'cover' }}
+                            className="img-fluid rounded photo-detail-img"
                         />
                     </Col>
                     <Col xs={12} md={6}>

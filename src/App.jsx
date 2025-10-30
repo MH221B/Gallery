@@ -21,15 +21,11 @@ function App() {
 
   const loadInitialPhotos = async () => {
     setLoading(true);
-    try {
-      const data = await fetchPhotos(1, 20);
-      setPhotos(data);
-      setPage(2);
-      if (data.length === 0) {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.error("Failed to fetch initial photos", error);
+    const data = await fetchPhotos(1, 20);
+    setPhotos(data);
+    setPage(2);
+    if (!data || data.length === 0) {
+      setHasMore(false);
     }
     setLoading(false);
   };
@@ -38,17 +34,13 @@ function App() {
     if (loading || !hasMore) return;
 
     setLoading(true);
-    try {
-      const data = await fetchPhotos(page, 20);
+    const data = await fetchPhotos(page, 20);
 
-      if (data.length === 0) {
-        setHasMore(false);
-      } else {
-        setPhotos((prevPhotos) => [...prevPhotos, ...data]);
-        setPage((prevPage) => prevPage + 1);
-      }
-    } catch (error) {
-      console.error("Failed to fetch more photos", error);
+    if (!data || data.length === 0) {
+      setHasMore(false);
+    } else {
+      setPhotos((prevPhotos) => [...prevPhotos, ...data]);
+      setPage((prevPage) => prevPage + 1);
     }
     setLoading(false);
   }, [page, loading, hasMore]);
